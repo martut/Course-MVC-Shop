@@ -1,0 +1,32 @@
+﻿
+<ul class="list-group">
+
+    <li class="list-group-item">
+        <a href="@Url.Action("Index","Admin")">
+            Zamówienia
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="@Url.Action("Index","Category")">
+            Kategorie
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="@Url.Action("Index","Product")">
+            Produkty
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="@Url.Action("Index","Producer")">
+            Producenci
+        </a>
+    </li>
+    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <li class="list-group-item">
+            <a href="@Url.Action("UserRoleChange","Admin")">
+                Uprawnienia użytkowników
+            </a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SklepKompMVC.Models.Producer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProducerShortName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProducerName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProducerShortName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProducerName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProducerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProducerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProducerId })
+        </td>
+    </tr>
+}
+
+</table>

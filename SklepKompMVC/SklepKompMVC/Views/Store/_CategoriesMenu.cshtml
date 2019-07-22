@@ -1,0 +1,17 @@
+﻿@model IEnumerable<SklepKompMVC.Models.Category>
+@using SklepKompMVC.Infrastructure
+
+
+<ul class="list-group">
+    @foreach (var category in Model)
+    {
+        <li class="list-group-item">
+            <a href="@Url.Action("List","Store", new { categoryname = category.CategoryName.ToString() })"
+               @*style="background: no-repeat url(@Url.CategoryIconsPath(category.CatIconFileName))";*@ >
+                @category.CategoryName
+            </a>
+            <span class="badge">@category.Products.Count()</span>
+
+        </li>
+    }
+</ul>

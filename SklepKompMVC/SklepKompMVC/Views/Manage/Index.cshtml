@@ -1,0 +1,32 @@
+﻿@model SklepKompMVC.Models.IndexViewModel
+@{
+    ViewBag.Title = "PasswordChange";
+}
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div class="col-md-4">
+    @Html.Partial("_ProfileMenu")
+</div>
+<div class="col-md-offset-1 col-md-7">
+    <div>
+        <h4>Change your account settings</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>Password:</dt>
+            <dd>
+                [
+                @if (Model.HasPassword)
+            {
+                    @Html.ActionLink("Change your password", "ChangePassword")
+                }
+                else
+                {
+                    @Html.ActionLink("Create", "SetPassword")
+                }
+                ]
+            </dd>
+            
+            
+        </dl>
+    </div>
+</div>

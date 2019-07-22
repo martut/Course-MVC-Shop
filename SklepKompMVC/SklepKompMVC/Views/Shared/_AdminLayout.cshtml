@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = ViewBag.Title;
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+
+<div class="col-md-3">
+    @Html.Partial("_AdminMenuPartial")
+</div>
+
+<div class="col-md-9">
+    @RenderBody()
+</div>

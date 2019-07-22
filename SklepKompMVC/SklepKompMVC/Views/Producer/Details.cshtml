@@ -1,0 +1,35 @@
+﻿@model SklepKompMVC.Models.Producer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Producer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProducerShortName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProducerShortName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProducerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProducerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProducerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

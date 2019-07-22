@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SklepKompMVC.Models.Order>
+
+@{
+    ViewBag.Title = "OrderHistory";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<div class="col-md-4">
+    @Html.Partial("_ProfileMenu")
+</div>
+<div class="col-md-8">
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.OrderHistoryId)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderHistoryId)
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateCreated)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderState)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.OrderId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

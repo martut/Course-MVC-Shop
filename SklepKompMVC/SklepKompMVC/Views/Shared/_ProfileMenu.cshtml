@@ -1,0 +1,29 @@
+﻿
+<ul class="list-group">
+
+    <li class="list-group-item">
+        <a href="@Url.Action("Index","Profile")">
+            Profil
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="@Url.Action("OrderHistory","Profile")">
+            Zamówienia
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="@Url.Action("Index","Manage")">
+            Edytuj Dane
+        </a>
+    </li>
+    @if (Request.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Manager")))
+    {
+        <li class="list-group-item">
+            <a href="@Url.Action("Index","Admin")">
+                Panel Administratora
+            </a>
+        </li>
+    }
+
+
+</ul>

@@ -1,0 +1,68 @@
+﻿@model SklepKompMVC.Models.Product
+@using SklepKompMVC.Infrastructure
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<div>
+    <div class="col-md-3">
+        @Html.Action("CategoriesMenu")
+    </div>
+    <div class="col-md-9">
+
+
+            <section>
+                <div class="col-md-4 " >
+
+                    <img class="img-responsive" src="@Url.ProductCoverPath(Model.ProductCoverFileName)" />
+
+                    <div id="product-details-share">
+                        <a href="fbshare"></a>
+                        <div></div>
+                        <a href="twshare"></a>
+                    </div>
+
+                </div>
+
+                <div class="col-md-8">
+                    <div id="product-details-names">
+
+                        <h1>
+                            @Model.ProductName
+                        </h1>
+
+                        <h2>
+                            @Model.Producer.ProducerName
+                        </h2>
+
+                    </div>
+
+                    <div id="product-details-price">
+                        <div>
+                            @string.Format("{0:0.##}", Model.Price)<span>PLN</span>
+                        </div>
+                        <a href="@Url.Action("AddToCart","Cart",new { id = Model.ProductId })"> Dodaj do koszyka</a>
+                    </div>
+
+                    
+                </div>
+
+                <div class="col-md-12">
+                    <div id="product-details-description">
+                        @Model.ProductDescription
+                    </div>
+
+                    <div id="product-details-info">
+                        Bezpłatna przesyłka. Czas realizacji 24h
+                    </div>
+                </div>
+
+            </section>
+
+      
+
+
+    </div>
+
+</div>

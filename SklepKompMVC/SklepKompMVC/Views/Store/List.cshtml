@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<div>
+    <div class="col-md-3">
+        @Html.Action("CategoriesMenu")
+    </div>
+   
+    <div class="col-md-9">
+        @Html.Partial("_ProductList")
+    </div>
+   
+</div>
